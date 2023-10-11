@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER APP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="weather-app">
+        <div class="container">
+            <nav>
+                <h1>Weather App</h1>
+                <form class="search-form" id="searchform">
+                    <input type="text" placeholder="Search any city..." id="city">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+                <div class="light-and-dark-toggle">
+                    <div class="circle">
+                        <i class="bi bi-sun-fill"></i>
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </div>
+                </div>
+            </nav>
+            <div class="weather-banner">
+                <div class="main-weather-info-wrapper">
+                    <div class="main-weather-info">
+                        <svg
+                            class="placeholder-main-info"
+                            role="img"
+                            width="400"
+                            height="160"
+                            aria-labelledby="loading-aria"
+                            viewBox="0 0 400 160"
+                            preserveAspectRatio="none"
+                            >
+                            <title id="loading-aria">Loading...</title>
+                            <rect
+                                x="0"
+                                y="0"
+                                width="100%"
+                                height="100%"
+                                clip-path="url(#clip-path)"
+                                style='fill: url("#fill");'
+                            ></rect>
+                            <defs>
+                                <clipPath id="clip-path">
+                                    <rect x="7" y="138" rx="3" ry="3" width="178" height="16" /> 
+                                    <rect x="2" y="-1" rx="0" ry="0" width="41" height="41" /> 
+                                    <rect x="5" y="75" rx="0" ry="0" width="116" height="49" /> 
+                                    <rect x="73" y="104" rx="0" ry="0" width="0" height="4" />
+                                </clipPath>
+                                <linearGradient id="fill">
+                                <stop
+                                    offset="0.599964"
+                                    stop-color="#f3f3f3"
+                                    stop-opacity="1"
+                                >
+                                    <animate
+                                    attributeName="offset"
+                                    values="-2; -2; 1"
+                                    keyTimes="0; 0.25; 1"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                    ></animate>
+                                </stop>
+                                <stop
+                                    offset="1.59996"
+                                    stop-color="#ecebeb"
+                                    stop-opacity="1"
+                                >
+                                    <animate
+                                    attributeName="offset"
+                                    values="-1; -1; 2"
+                                    keyTimes="0; 0.25; 1"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                    ></animate>
+                                </stop>
+                                <stop
+                                    offset="2.59996"
+                                    stop-color="#f3f3f3"
+                                    stop-opacity="1"
+                                >
+                                    <animate
+                                    attributeName="offset"
+                                    values="0; 0; 3"
+                                    keyTimes="0; 0.25; 1"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                    ></animate>
+                                </stop>
+                                </linearGradient>
+                            </defs>
+                            </svg>
+                        <img src="" alt="" id="weather-state-icon">
+                        <h2 class="weather-state-celcius">13°</h2>
+                        <p class="weather-state-location">California, Cupertino</p>
+                    </div>
+                    <div class="main-weather-date">
+                        <p class="weather-current-time">7:00PM</p>
+                        <p class="weather-current-name">Sunset Time, Monday</p>
+                    </div>
+                </div>
+            </div>
+           <div class="map-wrapper">
+            <iframe id="map" src="https://maps.google.com/maps?q=Moscow%20Dates%10Products&amp;t=&amp;z=30&amp;output=embed" width=100% height="250" allowfullscreen frameborder="0"></iframe>
+           </div>
+            <div class="weather-additional-info">
+                <div class="current-weather-add-info">
+                    <div class="add-info">
+                        <div class="add-info-item">
+                            <i class="bi bi-droplet-half"></i>
+                            <div>
+                                <p>Humidity</p>
+                                <p class="humidity">29%</p>
+                            </div>
+                        </div>
+                        <div class="add-info-item">
+                            <i class="bi bi-brightness-high"></i>
+                            <div>
+                                <p>UV index</p>
+                                <p class="uv">0 out of 10</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-info">
+                        <div class="add-info-item">
+                            <i class="bi bi-sunset"></i>
+                            <div>
+                                <p>Sunset</p>
+                                <p class="sunset">6:58PM</p>
+                            </div>
+                        </div>
+                        <div class="add-info-item">
+                            <i class="bi bi-sunrise"></i>
+                            <div>
+                                <p>Sunrise</p>
+                                <p class="sunrise">6:35AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="current-weather-indicator">
+                    <div class="air-pressure">
+                        1065Pa
+                        <p class="air-pressure">Air Pressure</p>
+                    </div>
+                    <div class="wind-direction">
+                        <div class="wind-arrow">
+                            <i class="bi bi-triangle-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="current-weather-hourly">
+                   <div class="chart-wrapper">
+                    <canvas id="myChart"></canvas>
+                   </div>
+                    <div class="day-info"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script  src="./script/app.js"></script>
+</body>
+</html>
